@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
   <link rel="stylesheet" href="style.css">
   <title>ROMEHI CREACIONES</title>
 </head>
@@ -117,86 +118,23 @@
         <p  data-aos="fade-up"
         data-aos-delay="500"
         data-aos-duration="1000" >Ofrecer productos de calidad, es nuestro objetivo primordial, asi como darle la mejor atencion y personalizada.</p>
-        <!-- <a href="#" class="btn btnD1"></a> -->
       </div>
     </div>
   </div>
 </section>
-<!-- <section class="blog" id="blog">
-<div class="container">
-  <div class="row">
-    <div class="offset-sm-2 col-sm-8">
-      <div class="headerText text-center">
-        <h1>Our Latest Post</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi accusamus voluptate dolores, odit alias nesciunt expedita ipsam porro at non, sint doloremque dolorum labore vel earum vero consequatur sapiente quos!</p>
-        <!-- <a href="#" class="btn btnD2">Read More</a> -->
-        <!-- <div class="clearfix"></div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="blogpost">
-        <div class="imgBox">
-          <img src="src/img1.jpg" class="img-fluid">
-        </div>
-        <div class="content">
-          <h1>This is titule in the mi page</h1>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe aliquam dicta similique voluptatum ipsum porro voluptates cumque quam iusto nihil ducimus aliquid, earum, quisquam veniam quas natus architecto magni fugiat!</p>
-          <a href="#" class="btn btnD2">Read More</a>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="blogpost">
-        <div class="imgBox">
-          <img src="src/img2.jpg" class="img-fluid">
-        </div>
-        <div class="content">
-          <h1>This is titule in the mi page</h1>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe aliquam dicta similique voluptatum ipsum porro voluptates cumque quam iusto nihil ducimus aliquid, earum, quisquam veniam quas natus architecto magni fugiat!</p>
-          <a href="#" class="btn btnD2">Read More</a>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="blogpost">
-        <div class="imgBox">
-          <img src="src/img3.jpg" class="img-fluid">
-        </div>
-        <div class="content">
-          <h1>This is titule in the mi page</h1>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe aliquam dicta similique voluptatum ipsum porro voluptates cumque quam iusto nihil ducimus aliquid, earum, quisquam veniam quas natus architecto magni fugiat!</p>
-          <a href="#" class="btn btnD2">Read More</a>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+<div class="img-zoom-container">
+  <img id="myimage" src="src/img.png" width="300" height="240" alt="Girl">
+  <div id="myresult" class="img-zoom-result"></div>
 </div>
-</section> -->
+
 <footer>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="sci text-center">
           <br>
-          <ul>
-            <li>
-              <a href="#"><i class="fa fa-facebook" style="color: rgb(53, 53, 238);"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-twitter" style="color: rgb(42, 119, 196);"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-whatsapp" style="color: rgb(34, 189, 65);"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-instagram" style="color: rgb(198, 61, 61);"></i></a>
-            </li>
-          </ul>
+          <!--  -->
           <p class="cpryt">@ copiright 2019 Nature</p>
         </div>
       </div>
@@ -207,6 +145,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 <script>
   AOS.init();
@@ -226,11 +165,67 @@ $(document).scroll(function(){
       s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
       var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
   })();
+
+  function imageZoom(imgID, resultID) {
+  var img, lens, result, cx, cy;
+  img = document.getElementById(imgID);
+  result = document.getElementById(resultID);
+  /* Create lens: */
+  lens = document.createElement("DIV");
+  lens.setAttribute("class", "img-zoom-lens");
+  /* Insert lens: */
+  img.parentElement.insertBefore(lens, img);
+  /* Calculate the ratio between result DIV and lens: */
+  cx = result.offsetWidth / lens.offsetWidth;
+  cy = result.offsetHeight / lens.offsetHeight;
+  /* Set background properties for the result DIV */
+  result.style.backgroundImage = "url('" + img.src + "')";
+  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+  /* Execute a function when someone moves the cursor over the image, or the lens: */
+  lens.addEventListener("mousemove", moveLens);
+  img.addEventListener("mousemove", moveLens);
+  /* And also for touch screens: */
+  lens.addEventListener("touchmove", moveLens);
+  img.addEventListener("touchmove", moveLens);
+  function moveLens(e) {
+    var pos, x, y;
+    /* Prevent any other actions that may occur when moving over the image */
+    e.preventDefault();
+    /* Get the cursor's x and y positions: */
+    pos = getCursorPos(e);
+    /* Calculate the position of the lens: */
+    x = pos.x - (lens.offsetWidth / 2);
+    y = pos.y - (lens.offsetHeight / 2);
+    /* Prevent the lens from being positioned outside the image: */
+    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+    if (x < 0) {x = 0;}
+    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+    if (y < 0) {y = 0;}
+    /* Set the position of the lens: */
+    lens.style.left = x + "px";
+    lens.style.top = y + "px";
+    /* Display what the lens "sees": */
+    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /* Get the x and y positions of the image: */
+    a = img.getBoundingClientRect();
+    /* Calculate the cursor's x and y coordinates, relative to the image: */
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /* Consider any page scrolling: */
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+};
+imageZoom("myimage", "myresult");
+
 </script>
-<!-- Getbutton.io widget -->
-<!-- <script type="text/javascript">
-  
-</script> -->
-<!-- /Getbutton.io widget -->
+<script>
+ 
+  </script>
 </body>
 </html>

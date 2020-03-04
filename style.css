@@ -119,7 +119,7 @@ margin-bottom: 20px;
 .placeBox {
  position: relative;
  max-width: 300px;
- height: 400px;
+ height: 500px;
  margin: 0 auto;
  background: rgb(255, 255, 255);
  margin-top: 30px;
@@ -221,42 +221,6 @@ margin-bottom: 20px;
     padding: 10px 20px;
     float: right;
 }
-/* .contact {
-    position: relative;
-    padding: 100px 0;
-    background: url(src/img2.jpg);
-    background-size: cover;
-    min-height: 100vh;
-}
-.contact form {
-    position: relative;
-    z-index: 1000;
-}
-.contact .form-control {
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid rgba(255, 255, 255, .2);
-    height: 50px;
-    border-radius: 0;
-    background: rgb(255, 89, 252);
-    color: #fff;
-    font-size: 1.25rem;
-}
-.contact .form-control:focus,
-.contact .form-control:hover
-{
-    border: none;
-    border-bottom: 2px solid rgba(255, 255, 255, .2);
-    box-shadow: none;
-}
-.contact .texarea {
-    min-height: 100px;
-}
-.contact label {
-    color:#fff;
-    font-size: 1.24rem;
-} */
-
 .footer {
     background: rgb(177, 165, 165);
     padding:  50px 0 0;
@@ -282,6 +246,26 @@ margin-bottom: 20px;
 .cpryt a,
 .cpryt a:hover {
     color: #fff;
+}
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+  position: relative;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
+  height: 300px;
 }
 @media (min-width: 992px)
 {
@@ -321,13 +305,6 @@ margin-bottom: 20px;
    .blogspot .imgBx {
        height: 200px;
    }
-   /* .contact {
-       padding: 20px 0;
-   }
-   .contact .form-control {
-        height: 40px;
-        border: 1px solid #fff
-   } */
    .btnD1 {
        padding: 10px 40px;
        margin-top: 10px;
